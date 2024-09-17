@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 describe('Funcionalidade: Cadastro', () => {
 
   beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    cy.visit('minha-conta')
   })
 
   it('deve completar o cadastro com suceso', () => {
@@ -21,7 +21,7 @@ describe('Funcionalidade: Cadastro', () => {
   });
 
 
-  it.only('Deve completar o cadastro com sucesso - Usando Variáveis', () => {
+  it('Deve completar o cadastro com sucesso - Usando Variáveis', () => {
     let nome = faker.person.firstName()
     let email = faker.internet.email(nome)
     let sobrenome = faker.person.lastName()
@@ -33,6 +33,11 @@ describe('Funcionalidade: Cadastro', () => {
     cy.get('#account_first_name').type(nome)
     cy.get('#account_last_name').type(sobrenome)
     cy.get('.woocommerce-Button').click()
+    cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+  });
+
+  it.only('Deve fazer o cadastro com sucesso - Usando comandos customizados', () => {
+    cy.preCadastro(faker.internet.email(), 'teste@123', faker.person.firstName(), faker.person.fullName())
     cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
   });
 })
