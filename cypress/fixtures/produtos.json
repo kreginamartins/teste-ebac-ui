@@ -1,0 +1,20 @@
+[
+  {
+    "nomeProduto": "Daphne Full-Zip Hoodie", 
+    "tamanho": "M",
+    "cor": "Purple",
+    "quantidade": 3
+  },
+  {
+    "nomeProduto": "Miko Pullover Hoodie", 
+    "tamanho": "S",
+    "cor": "Blue",
+    "quantidade": 2
+  },
+  {
+    "nomeProduto": "Autumn Pullie", 
+    "tamanho": "XS",
+    "cor": "Green",
+    "quantidade": 9
+  }
+]
